@@ -59,4 +59,13 @@
 		mysqli_query($conn,$sql);
 	}
 
+	function searchData($key){
+
+		$conn = getConn();
+		$sql = "select * from author where id like '{$key}%' or name like '{$key}%' or username like '{$key}%' or phone like '{$key}%'";
+		$result = mysqli_query($conn, $sql);
+
+		return $result;
+	}
+
  ?>
